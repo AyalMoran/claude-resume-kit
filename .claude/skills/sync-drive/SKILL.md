@@ -71,10 +71,10 @@ If no PDFs exist, stop and tell the user to compile first.
 
 ### Name the destination, not the source
 
-Local files are named for the pipeline (`e2e_acme_engineer_resume.pdf`). That name is useless to
-a recruiter and meaningless in a shared folder. Upload under a submission name instead -
-`rclone copyto` sets the destination name independently, so the local working name stays
-untouched.
+If the Finalization step in `shared_ops.md` already ran, the local PDFs carry submission names
+and you can upload them as-is. If you still see the `e2e_` prefix, that is pipeline build output
+rather than something anyone should receive: rename it on the way up. `rclone copyto` sets the
+destination name independently, so the local file is unaffected either way.
 
 Take the person's name from `config.md` Personal Info and the role from the session file's JD
 Info (the same `ROLE:` value the JD capture recorded):

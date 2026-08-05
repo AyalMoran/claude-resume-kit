@@ -111,10 +111,24 @@ The tool is authoritative — never trust mental math for char counts. If the to
    - `e2e_<name>_[resume|cv].tex` + `.pdf` + compile artifacts
    - `e2e_<name>_cover_letter.tex` + `.pdf` + compile artifacts
    - `critique_<name>.md`
-2. Rename final PDFs for submission (derive name from `config.md` Personal Info):
-   - `cp e2e_<name>_[resume|cv].pdf <Firstname>_<Lastname>_[Resume|CV].pdf`
-   - `cp e2e_<name>_cover_letter.pdf <Firstname>_<Lastname>_Cover_Letter.pdf`
-   - Keep originals alongside
+2. Rename the final PDFs for submission. The `e2e_` prefix marks pipeline build output; these
+   names are what an employer actually receives, so they are written for a human reader.
+
+   Take the person from `config.md` Personal Info, the company from the output folder name, and
+   the job title from the session file JD Info. Slug the job title by dropping parenthetical
+   qualifiers, replacing spaces with hyphens, and keeping the original capitalization so
+   acronyms stay readable - the same rule `/make-jd` uses for JD filenames.
+
+   - `mv e2e_<name>_[resume|cv].pdf <First>-<Last>-CV-<Company>-<Job-Title>.pdf`
+   - `mv e2e_<name>_cover_letter.pdf <First>-<Last>-Cover-Letter-<Company>-<Job-Title>.pdf`
+
+   Both the company and the job title belong in the name. One company often posts several roles,
+   and a name carrying only the company overwrites your earlier application the moment you apply
+   to a second one.
+
+   Renaming rather than copying is safe because the `.tex` is the source of truth and `pdflatex`
+   regenerates `e2e_<name>_*.pdf` on demand. The flip side: any later `/edit-resume` pass writes
+   a fresh `e2e_` PDF, so re-run this rename afterwards or you will submit the pre-edit file.
 3. Confirm to user: "Package complete in output/<FolderName>/ — [N] files"
 
 ---
