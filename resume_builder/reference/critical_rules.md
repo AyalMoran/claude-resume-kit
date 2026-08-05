@@ -44,6 +44,10 @@ All FIXED sections (internships, education, publications, honors/awards, header 
 NEVER change: \vspace values, \geometry settings, .cls formatting, header layout.
 Only modify VARIABLE sections: Summary, Technical Skills, Experience bullets/headers.
 
+**Header link form (CLAUDE.md Rule 6):** LinkedIn and GitHub are plain visible URL text
+(`linkedin.com/in/name`, `github.com/name`), never `\href` hyperlinks behind a label. The resume
+has to stay usable on paper. Copy the header verbatim from the template and this is already correct.
+
 ## Provenance Flags
 
 See `CLAUDE.md` for your project-specific provenance flags. Common patterns:

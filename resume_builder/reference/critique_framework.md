@@ -158,10 +158,10 @@ Score each dimension independently, then compute weighted total.
 | 2 | Summary | 10% | Bridge sentence, target-domain language, prestige signals, forward-looking intent |
 | 3 | Skills Section | 10% | Group names (domain signal), content relevance, bold accuracy, no wasted entries |
 | 4 | Bullet Quality | 25% | Per-bullet JD alignment (HIGH/MEDIUM/LOW), reframing quality, quantification, action verbs |
-| 5 | Publication Selection | 10% | Venue prestige, tag relevance, first-author ratio, domain gap acknowledgment |
+| 5 | Project Selection | 10% | JD relevance, ownership clarity, technical difficulty signal, outcome quantification. If the resume has no Selected Projects section, redistribute this 10% to Bullet Quality (→35%) and say so in the report rather than scoring 0. |
 | 6 | Narrative Coherence | 15% | Header-to-footer story, domain thread count, first-impression timing |
 | 7 | Page Fill & Visual | 5% | Budget compliance, orphan check, compile clean, slack acceptable |
-| 8 | Credibility Signals | 10% | Venue quality, metrics (papers, citations, awards), platform adoption, leadership evidence |
+| 8 | Credibility Signals | 10% | Scale and impact metrics, ownership evidence, adoption, leadership signals, defensibility of every number |
 
 **Scoring rubric per dimension:**
 - 9-10: Essentially optimal for this candidate-JD pairing
@@ -464,7 +464,7 @@ Final mechanical checklist. Run AFTER all other critique parts. These are pass/f
 - [ ] All provenance flags correct (see CLAUDE.md for project-specific flags)
 - [ ] No forbidden terms (see CLAUDE.md for project-specific corrections)
 - [ ] No inflation (contributing-author verbs hedged, no false claims)
-- [ ] Publication entries match pub_metadata.md (titles, journals, years)
+- [ ] Project entries match project_metadata.md (names, ownership, metrics)
 - [ ] Cover letter claims traceable to resume/CV bullets
 
 ### Structural Checks

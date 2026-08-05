@@ -110,6 +110,8 @@ Open the templates in `resume_builder/templates/` and fill in your FIXED section
 
 ### 5. Generate for a job
 
+Have only a posting link or raw text? Run `/make-jd <url or pasted posting>` first - it saves a clean `JDs/<company>_<role>.txt` for you. Then:
+
 ```
 /make-resume JDs/target_job.txt
 ```
@@ -136,6 +138,7 @@ Job Description --> /make-resume --> Tailored Resume/CV (.tex)            |
 |-------|---------|-------|--------|
 | `/setup-extract` | Extract structured data from a paper | Paper path | `knowledge_base/extractions/*.md` |
 | `/setup-build-kb` | Build KB from extractions | All extractions | `resume_builder/{experience,bundles,support}/` |
+| `/make-jd` | Capture a job posting into a JD file | Posting URL or pasted text | `JDs/<company>_<role>.txt` |
 | `/make-resume` | Generate tailored resume or CV | JD path | `output/<Folder>/e2e_*.tex` + session file |
 | `/make-cl` | Generate matching cover letter | Session file | `output/<Folder>/*_cover_letter.tex` |
 | `/edit-resume` | Edit resume/CV/CL from feedback | Session + feedback | Updated `.tex` files |

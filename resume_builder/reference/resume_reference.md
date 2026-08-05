@@ -9,8 +9,8 @@
 ## QUICK BUDGET CARD (read this FIRST)
 
 ```
-RESUME (2-page, resume.cls):  ~20 variable bullets | Skills 13 lines (4-3-2-2-2) | 5 pubs | 5 awards
-CV     (5-page, cv.cls):      19-21 variable bullets (45 rendered lines) | Skills 17 lines (4-4-3-3-3) | all pubs | 6 awards
+RESUME (2-page, resume.cls):  ~20 variable bullets | Skills 13 lines (4-3-2-2-2) | 3-5 projects | 0-2 certs
+CV     (5-page, cv.cls):      UNUSED for engineering roles — see config.md Document Preferences
 
 Resume bullet: max 2 rendered lines | 1L: 105-111 chars | 2L: 189-205 chars (target ~200)
 CV bullet:     max 3 rendered lines | 2L: 168-182 chars | 3L: 250-268 chars (target ~175/~260)
@@ -30,13 +30,13 @@ Full package: Resume + CL = 3 pages | CV + CL = 6-7 pages
 1. **Summary** (bundle Section 2): 4-5 sentences, exactly 5 body lines. 500-555 rendered chars (HARD MAX 570, floor ~490). Orphan: last line >= 78 chars.
    - **Headline Tagline:** 80-95 rendered chars, exactly 1 line.
 2. **Technical Skills** (bundle Section 4 + skills_taxonomy.md): Format C — 5 groups, default 4-3-2-2-2 (13 lines). Each dash = exactly 1 rendered line. Bold penalty: 119 - (0.5 x bold_chars).
-3. **Research Experience** (experience files + achievement_reframing_guide.md): Write bullets FRESH per Experience Bullet Writing Protocol (below). Max 2 rendered lines per bullet. Run char_count.py after each position.
+3. **Experience** (experience files + achievement_reframing_guide.md): Write bullets FRESH per Experience Bullet Writing Protocol (below). Max 2 rendered lines per bullet. Run char_count.py after each position.
    - resume.cls: Args 3+4 on SAME italic line
    - **After all positions: verify total variable bullet count matches budget**
 4. **Education**: FIXED — copy from template
-5. **Selected Publications** (pub_metadata.md): 5 publications scored per JD. Copy FIXED author+journal blocks, GENERATE JD-shortened title + tags. 2 rendered lines hard limit per entry.
-6. **Honors & Awards**: FIXED — items from template
-7. **Immigration notice**: FIXED for USA JDs. Delete for non-USA JDs.
+5. **Selected Projects** (project_metadata.md): 3-5 projects scored per JD. Each entry: bold project name, what it does, the user's ownership, measured outcome. 2 rendered lines hard limit per entry. Omit the section entirely if the Experience bullets already carry the same projects — duplication costs page budget and reads as padding.
+6. **Certifications & Awards**: FIXED — items from template. Omit if empty.
+7. **Work authorization notice**: omit unless the JD makes it relevant.
 
 ### CV (cv.cls)
 
@@ -225,6 +225,7 @@ The following elements are set in the `.cls` files and templates. **NEVER change
 - **FIXED section content** (Education, Fellowships, Publications, Presentations, Mentorship, Collaborations, Computing, Internship) — copy verbatim from template. Never rewrite, trim, or reorder.
 - **`.cls` formatting** (font sizes, section rules, item separators, skill group spacing) — never override with inline LaTeX.
 - **Header layout** (name, email, location, icons) — structure is template-locked. Only the email address and link URLs are configurable.
+  - **Link form is fixed too:** LinkedIn and GitHub render as plain visible URL text (`linkedin.com/in/name`, `github.com/name`), never as an `\href` hyperlink behind a `LinkedIn`/`GitHub` label. A printed or screenshotted resume must still show where to go. See `CLAUDE.md` Generation Rule 6.
 
 **If content spills to an extra page (orphan lines):** Fix by shortening VARIABLE content only (summary, skills dashes, experience bullets). Count rendered characters to ensure bullets actually fit their target line count (2L or 3L). A bullet that is "2L" in the budget but renders as 3L due to character overflow is the most common cause of page spill. Before declaring any output done, compile with pdflatex and verify page count matches target (resume=2, CV=5).
 
@@ -297,7 +298,7 @@ For each identified gap, assess:
 1. `bundle_[role_type].md` — Role-specific generation content (Sections 1-5)
 2. `achievement_reframing_guide.md` — Role-type framing directives for all achievements
 3. `skills_taxonomy.md` — Full skills inventory for Format C generation
-4. `pub_metadata.md` — Publication database with scoring tags
+4. `project_metadata.md` — Project database with scoring tags
 5. `resume.cls` — Document class file
 6. `resume_template.tex` — Structural template (contains FIXED sections)
 7. Experience files from `resume_builder/experience/`
@@ -306,7 +307,7 @@ For each identified gap, assess:
 1. `bundle_[role_type].md` — Role-specific generation content (Sections 1-5)
 2. `achievement_reframing_guide.md` — Role-type framing directives for all achievements
 3. `skills_taxonomy.md` — Full skills inventory for Technical Expertise generation
-4. `pub_metadata.md` — Publication database with scoring tags
+4. `project_metadata.md` — Project database with scoring tags
 5. `cv.cls` — Document class file
 6. `cv_template.tex` — Structural template (contains FIXED sections)
 7. Experience files from `resume_builder/experience/`

@@ -42,7 +42,11 @@
 %----------------------------------------------------------------------------------------
 \name{[CONFIG: Full Name, Degree]}
 \address{\faEnvelope~\href{mailto:[CONFIG: email]}{[CONFIG: email]}}
-\address{\faMapMarker~[CONFIG: City, State] $|$ \faLinkedin~\href{[CONFIG: LinkedIn URL]}{LinkedIn} $|$ \includegraphics[height=1em]{orcid.png}~\href{[CONFIG: ORCID URL]}{ORCID: [CONFIG: ORCID ID]} $|$ \includegraphics[height=1em]{GS.png}~\href{[CONFIG: Google Scholar URL]}{Google Scholar}}
+% PRINT RULE (CLAUDE.md Generation Rule 6): LinkedIn and GitHub are PLAIN TEXT URLs, never \href
+% hyperlinks -- a printed CV must still show where to go. Write them as linkedin.com/in/name and
+% github.com/name (no https://, no www.). ORCID and Google Scholar keep \href: their URLs are long
+% opaque ID strings, and the ORCID iD is already printed in full beside the icon.
+\address{\faMapMarker~[CONFIG: City, State] $|$ \faLinkedin~[CONFIG: LinkedIn URL as plain text, e.g. linkedin.com/in/name] $|$ \includegraphics[height=1em]{orcid.png}~\href{[CONFIG: ORCID URL]}{ORCID: [CONFIG: ORCID ID]} $|$ \includegraphics[height=1em]{GS.png}~\href{[CONFIG: Google Scholar URL]}{Google Scholar}}
 
 \begin{document}
 \vspace{-0.03cm}

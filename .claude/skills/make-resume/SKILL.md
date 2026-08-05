@@ -126,7 +126,7 @@ Proceeding without confirmation misaligns the entire resume and requires full re
 2. All experience files from `resume_builder/experience/`
 3. `resume_builder/support/achievement_reframing_guide.md`
 4. `resume_builder/support/skills_taxonomy.md`
-5. `resume_builder/support/pub_metadata.md`
+5. `resume_builder/support/project_metadata.md`
 
 **Present one table per position:**
 

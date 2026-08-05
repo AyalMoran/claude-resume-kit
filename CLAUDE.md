@@ -10,6 +10,7 @@
 .claude/skills/
 ├── setup-extract/SKILL.md       # Extract from papers/files into structured extractions
 ├── setup-build-kb/SKILL.md      # Build experience files, bundles, taxonomy from extractions
+├── make-jd/SKILL.md             # Capture a job posting (URL or paste) into JDs/*.txt
 ├── make-resume/SKILL.md         # Phase 0-2: JD research → bullet plan → resume/CV generation
 ├── make-cl/SKILL.md             # Cover letter generation from session file
 ├── edit-resume/SKILL.md         # Edit resume/CV from critique or user feedback
@@ -106,6 +107,21 @@ Use et al. format. Show authors up to and including the user's position, then "e
 
 ### Rule 5: Funding is not a personal award
 Institutional project funding (grants, internal R&D programs) is NOT a personal fellowship or award. Never list funding sources under Fellowships & Honors.
+
+### Rule 6: Profile links are plain text URLs, never hyperlinks
+LinkedIn and GitHub in the header block must render as the **visible URL text**, never as a `\href` hyperlink hiding behind a label like `LinkedIn` or `GitHub`.
+
+A resume gets printed, screenshotted, and forwarded as flat text. A hyperlink whose display text is `GitHub` becomes a dead word on paper: the reader can see that a profile exists but has no way to reach it.
+
+| | Correct | Wrong |
+|---|---------|-------|
+| Resume/CV header | `\address{linkedin.com/in/name \\ github.com/name}` | `\address{\href{https://linkedin.com/in/name}{LinkedIn}}` |
+
+Drop the `https://` and `www.` prefixes. What remains is still a working, typeable URL and it keeps the header line short.
+
+**Scope:** LinkedIn and GitHub. ORCID and Google Scholar in `cv_template.tex` keep their `\href` — those URLs are long opaque ID strings, and the ORCID iD is already printed in full next to the icon.
+
+This applies to every generated resume, CV, and any regeneration of an existing output. It is a template-level rule, so it survives the FIXED-header restriction: the header layout is still immutable, but its link form is now specified here.
 
 ---
 

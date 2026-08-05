@@ -126,35 +126,35 @@ Progress: "Built taxonomy — [N] skills across [M] categories"
 
 ---
 
-## Phase 3: Build Publication Metadata
+## Phase 3: Build Project Metadata
 
-**Goal:** Structured pub data for resume/CV generation.
+**Goal:** Structured project data for resume generation and the Selected Projects section.
 
-**Build** `resume_builder/support/pub_metadata.md`:
+**Build** `resume_builder/support/project_metadata.md`:
 
 ```markdown
-# Publication Metadata
+# Project Metadata
 
 ## Summary
-- Total publications: [N]
-- First-author: [N] | Co-first: [N] | Contributing: [N]
-- Published: [N] | Under review: [N] | In preparation: [N]
+- Total projects: [N]
+- Sole owner: [N] | Design owner: [N] | Implementer: [N] | Contributor: [N]
+- Shipped: [N] | Internal: [N] | Prototype: [N]
 
-## Publication List
+## Project List
 
-### First-Author / Co-First
-| # | Citation (et al. format) | Journal | Year | Status | Key Topic |
-|---|-------------------------|---------|------|--------|-----------|
-| 1 | [Author et al., Journal, Year] | [journal] | [year] | [status] | [topic] |
+### Sole / Design Ownership
+| # | Project | Stack | Scale or Impact | Status | JD Tags |
+|---|---------|-------|-----------------|--------|---------|
+| 1 | [name] | [primary stack] | [measured outcome] | [status] | [role types this fits] |
 
-### Contributing Author
-[same table format]
+### Shared Ownership
+[same table format — note in the JD Tags column what needs hedged verbs]
 
-### Under Review / In Preparation
-[same table format, with provenance notes]
+### Prototype / Internal
+[same table format, with provenance notes on what must not be framed as shipped]
 ```
 
-Progress: "Pub metadata — [N] first-author, [M] contributing, [K] under review"
+Progress: "Project metadata — [N] owned, [M] shared, [K] internal"
 
 ---
 
@@ -308,7 +308,7 @@ After all phases complete (or after the requested subset), present:
 |-----------|------|--------|-------|
 | Experience files | `experience/*.md` | [DONE/MISSING] | [N achievements] |
 | Skills taxonomy | `support/skills_taxonomy.md` | [DONE/MISSING] | [N skills] |
-| Pub metadata | `support/pub_metadata.md` | [DONE/MISSING] | [N pubs] |
+| Project metadata | `support/project_metadata.md` | [DONE/MISSING] | [N projects] |
 | Reframing guide | `support/achievement_reframing_guide.md` | [DONE/MISSING] | [N entries] |
 | Bundles | `bundles/bundle_*.md` | [DONE/MISSING] | [N bundles] |
 | Significance | `support/significance_*.md` | [DONE/MISSING] | [N files] |

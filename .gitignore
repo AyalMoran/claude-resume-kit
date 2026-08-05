@@ -9,9 +9,6 @@
 *.blg
 *.toc
 
-# Compiled PDFs (keep source .tex only)
-output/**/*.pdf
-
 # OS files
 .DS_Store
 Thumbs.db
@@ -30,5 +27,60 @@ __pycache__/
 # Build planning (not shipped)
 .planning/
 
-# Session-specific (users may want to keep these — uncomment to ignore)
-# output/
+# ---------------------------------------------------------------------------
+# Personal content - never commit
+#
+# This kit is meant to be cloned and shared. Everything below is one person's
+# career data, active job search, or local machine state. None of it is useful
+# to another user of the repo, and most of it identifies you by name, email,
+# phone, employer, and the roles you are applying to.
+#
+# The rule: the repo tracks empty scaffolding plus the kit's own examples.
+# Your filled-in copies stay on your machine.
+#
+# Note: .gitignore only affects UNTRACKED files. Files that are already tracked
+# (config.md, the .tex templates, _INVENTORY.md) get personalized in place and
+# cannot be protected this way - see "Protecting tracked template files" in
+# DOCS.md for the skip-worktree guard used instead.
+# ---------------------------------------------------------------------------
+
+# Real job postings you are applying to
+JDs/*
+!JDs/example_jd.txt
+
+# Generated application packages: resumes, cover letters, session files, PDFs.
+# These carry your name, email, phone, and full employment history.
+output/*
+!output/.gitkeep
+
+# Your knowledge base: raw source material and per-project extractions
+knowledge_base/extractions/*
+!knowledge_base/extractions/_INVENTORY.md
+knowledge_base/papers/*
+!knowledge_base/papers/.gitkeep
+knowledge_base/notes/*
+!knowledge_base/notes/.gitkeep
+
+# Your synthesized career files, built by /setup-build-kb
+resume_builder/experience/*
+!resume_builder/experience/.gitkeep
+resume_builder/bundles/*
+!resume_builder/bundles/.gitkeep
+resume_builder/support/*
+!resume_builder/support/.gitkeep
+!resume_builder/support/ai_fingerprint_rules.md
+
+# ---------------------------------------------------------------------------
+# Local Claude Code state - machine-specific, not part of the kit
+# ---------------------------------------------------------------------------
+.claude/HANDOFF.md
+.claude/HANDOFF.md.consumed
+.claude/hooks/
+.claude/logs/
+.claude/orchestration/
+.claude/rules/
+.claude/state/
+.instance/
+
+# Skill-development scratch: eval runs, fixtures, graded outputs
+.claude/skills/*-workspace/

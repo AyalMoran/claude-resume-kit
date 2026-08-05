@@ -10,9 +10,10 @@ Detailed reference for claude-resume-kit. For the quick overview, see [README.md
 claude-resume-kit/
 ├── CLAUDE.md                          # Auto-loaded project instructions
 ├── config.md                          # Your personal configuration
-├── .claude/skills/                    # 6 skills (invoked as /skill-name)
+├── .claude/skills/                    # 7 skills (invoked as /skill-name)
 │   ├── setup-extract/SKILL.md         # Extract from papers → structured data
 │   ├── setup-build-kb/SKILL.md        # Synthesize KB from extractions
+│   ├── make-jd/SKILL.md               # Posting URL/paste → JDs/*.txt
 │   ├── make-resume/SKILL.md           # JD → tailored resume/CV (.tex)
 │   ├── make-cl/SKILL.md              # Session → cover letter (.tex)
 │   ├── edit-resume/SKILL.md           # Edit from critique/feedback
@@ -168,6 +169,59 @@ Each skill is a markdown file in `.claude/skills/<name>/SKILL.md`. You can:
 - Adjust how many bullets per position
 - Modify the critique scoring weights
 - Add new skills for your workflow
+
+---
+
+## Keeping Personal Content Out of Git
+
+Once you start using the kit, most of what you generate identifies you: your name, email, phone,
+employment history, and the specific companies you are applying to. The repo is meant to stay
+shareable, so it tracks empty scaffolding plus the kit's own examples, and nothing else.
+
+`.gitignore` covers everything the kit *creates*:
+
+| Ignored | Why |
+|---------|-----|
+| `JDs/*` (except `example_jd.txt`) | Names the companies you are applying to |
+| `output/*` | Finished resumes, cover letters, and session files - full contact details |
+| `knowledge_base/extractions/*` | Your projects, employers, and provenance notes |
+| `knowledge_base/papers/*`, `notes/*` | Your source material |
+| `resume_builder/{experience,bundles,support}/*` | Your synthesized career data |
+| `.claude/{hooks,logs,orchestration,rules,state}/`, `.instance/` | Local machine state |
+
+### Protecting tracked template files
+
+`.gitignore` only applies to files git is not already tracking. Four files ship as templates and
+then get personalized in place, so ignoring them does nothing:
+
+- `config.md` - your name, email, phone, profile URLs
+- `resume_builder/templates/resume_template.tex` - FIXED header block
+- `resume_builder/templates/cv_template.tex` - same, if you use CV mode
+- `knowledge_base/extractions/_INVENTORY.md` - your extraction index
+
+Guard them with `skip-worktree`, which tells git to ignore your local modifications so a stray
+`git add -A` or `git commit -a` cannot stage them:
+
+```bash
+git update-index --skip-worktree config.md resume_builder/templates/resume_template.tex knowledge_base/extractions/_INVENTORY.md
+```
+
+To edit one of these as a *template* change you actually want to commit, lift the guard first:
+
+```bash
+git update-index --no-skip-worktree config.md
+```
+
+List everything currently guarded with `git ls-files -v | grep ^S`.
+
+`CLAUDE.md` is a fifth mixed file: the rules are kit content, but the **Active Sessions** table is
+your live job search. Clear that table back to `| (none active) | — | — |` before committing it.
+
+Before pushing, it is worth one direct check that nothing personal slipped into the commit:
+
+```bash
+git diff --cached | grep -iE "your-email|your-phone|your-name"
+```
 
 ---
 
