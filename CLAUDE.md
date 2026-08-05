@@ -14,7 +14,8 @@
 ├── make-resume/SKILL.md         # Phase 0-2: JD research → bullet plan → resume/CV generation
 ├── make-cl/SKILL.md             # Cover letter generation from session file
 ├── edit-resume/SKILL.md         # Edit resume/CV from critique or user feedback
-└── critique/SKILL.md            # 8-dimension critique of full package
+├── critique/SKILL.md            # 8-dimension critique of full package
+└── sync-drive/SKILL.md          # Upload finished package PDFs to Google Drive
 
 resume_builder/
 ├── reference/

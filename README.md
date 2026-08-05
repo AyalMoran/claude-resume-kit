@@ -143,6 +143,7 @@ Job Description --> /make-resume --> Tailored Resume/CV (.tex)            |
 | `/make-cl` | Generate matching cover letter | Session file | `output/<Folder>/*_cover_letter.tex` |
 | `/edit-resume` | Edit resume/CV/CL from feedback | Session + feedback | Updated `.tex` files |
 | `/critique` | Independent quality review | Session file | `output/<Folder>/critique_*.md` |
+| `/sync-drive` | Upload finished PDFs to Google Drive | Output folder | `cv-and-resume/` in Drive |
 
 ---
 

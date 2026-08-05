@@ -10,14 +10,15 @@ Detailed reference for claude-resume-kit. For the quick overview, see [README.md
 claude-resume-kit/
 ├── CLAUDE.md                          # Auto-loaded project instructions
 ├── config.md                          # Your personal configuration
-├── .claude/skills/                    # 7 skills (invoked as /skill-name)
+├── .claude/skills/                    # 8 skills (invoked as /skill-name)
 │   ├── setup-extract/SKILL.md         # Extract from papers → structured data
 │   ├── setup-build-kb/SKILL.md        # Synthesize KB from extractions
 │   ├── make-jd/SKILL.md               # Posting URL/paste → JDs/*.txt
 │   ├── make-resume/SKILL.md           # JD → tailored resume/CV (.tex)
 │   ├── make-cl/SKILL.md              # Session → cover letter (.tex)
 │   ├── edit-resume/SKILL.md           # Edit from critique/feedback
-│   └── critique/SKILL.md             # Independent quality review
+│   ├── critique/SKILL.md             # Independent quality review
+│   └── sync-drive/SKILL.md           # Finished PDFs → Google Drive
 ├── resume_builder/
 │   ├── reference/                     # Generation rules and protocols
 │   │   ├── shared_ops.md              # Session workflow (all skills read this)
